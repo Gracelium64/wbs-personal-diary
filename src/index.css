@@ -1,2 +1,13 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+:root {
+  --basicBitchWhite: rgba(217, 217, 217, 1);
+  --basicBitchBlack: rgba(18, 18, 18, 1);
+  --buttonBg: rgba(133, 64, 64, 1);
+  --calenderBg: rgba(80, 63, 63, 1);
+  --mark: rgba(30, 185, 3, 1);
+  --popupBg: rgba(63, 72, 80, 1);
+  --scrollbarBg: rgba(248, 248, 248, 1);
+  --scrollbarLocator: rgba(63, 80, 72, 1);
+}
