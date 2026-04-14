@@ -1,27 +1,21 @@
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">React + TailwindCSS</h1>
-
-      <div className="avatar">
-        <div className="w-24 rounded-xl">
-          <img
-            src="https://img.daisyui.com/images/profile/demo/yellingwoman@192.webp"
-            alt="blondeLady"
-          />
-        </div>
+    <BrowserRouter>
+      <div className="min-h-screen bg-base-100">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </div>
-      <div className="avatar">
-        <div className="w-24 rounded-full">
-          <img
-            src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"
-            alt="kitty"
-          />
-        </div>
-      </div>
-    </>
+    </BrowserRouter>
   );
 }
 
