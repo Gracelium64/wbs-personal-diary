@@ -5,11 +5,10 @@ import {
   formatDate,
   hasEntryOnDate,
   makeId,
-  // pickRandomImage,
   readDiary,
   sortNewestFirst,
   writeDiary,
-} from "../utils/diary_functions";
+} from "../utils/diaryFunctions";
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -70,7 +69,7 @@ export default function Home() {
     setEditingEntry(null);
   }
 
-  function handleOverrideSucess() {
+  function handleOverrideSuccess() {
     setIsLimitModalOpen(false);
     setEditingEntry(null);
     setIsEntryModalOpen(true);
@@ -160,7 +159,7 @@ export default function Home() {
       </div>
 
       <EntryModal
-        key={`${editingEntry?.id ?? "new"}-${isEntryModalOpen ? "open" : "closed"}`}
+        key={`${editingEntry?.id ?? "new"}-${isEntryModalOpen ? true : false}`}
         isOpen={isEntryModalOpen}
         mode={editingEntry ? "edit" : "add"}
         initialEntry={editingEntry || null}
@@ -175,7 +174,7 @@ export default function Home() {
       <DailyLimitModal
         isOpen={isLimitModalOpen}
         onClose={() => setIsLimitModalOpen(false)}
-        onOverrideSuccess={handleOverrideSucess}
+        onOverrideSuccess={handleOverrideSuccess}
       />
     </main>
   );
