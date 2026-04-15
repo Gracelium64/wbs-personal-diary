@@ -37,7 +37,3 @@ export function hasEntryOnDate(entries, dateString) {
 export function makeId() {
   return `entry-${Date.now()}-${Math.floor(Math.random() * 10000)}`;
 }
-
-export function pickRandomImage(images) {
-  return images[Math.floor(Math.random() * images.length)];
-}
